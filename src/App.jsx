@@ -90,8 +90,7 @@ const TodoList = () => {
               <button
                 onClick={() => deleteTodo(todo.id)}
                 className="bg-red-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-red-600 transition"
-              />
-              <button className="bg-red-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-red-600 transition">
+              >
                 Delete
               </button>
             </li>
