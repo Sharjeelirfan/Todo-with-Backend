@@ -16,6 +16,9 @@ const TodoList = () => {
   };
   useEffect(() => {
     getTodo();
+        const interval = setInterval(getTodo, 2000);
+        return () => clearInterval(interval);
+
   }, []);
 
   // console.log(inputValue);
