@@ -20,8 +20,6 @@ const TodoList = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // console.log(inputValue);
-
   const addTodo = async () => {
     if (inputValue.trim() !== "") {
       try {
