@@ -11,7 +11,7 @@ const TodoList = () => {
   const getTodo = async () => {
     const res = await axios(`${BASE_URL}/todos`);
     const todosFromServer = res?.data?.data;
-    console.log(todosFromServer);
+    //console.log(todosFromServer);
     setTodos(todosFromServer);
   };
   useEffect(() => {
