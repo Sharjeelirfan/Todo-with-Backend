@@ -35,6 +35,14 @@ const TodoList = () => {
       }
     } else alert("Please enter the value");
   };
+  const deleteTodo = async (id) => {
+    try {
+      await axios.delete(`${BASE_URL}/edit-todo/${id}`);
+      getTodo();
+    } catch (e) {
+      console.error(e);
+    }
+  };
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       addTodo();
