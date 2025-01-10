@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const TodoList = () => {
-  const BASE_URL = "https://todo-api-lyart.vercel.app";
+  const BASE_URL = "http://localhost:3000";
 
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -11,7 +12,7 @@ const TodoList = () => {
   const getTodo = async () => {
     const res = await axios(`${BASE_URL}/todos`);
     const todosFromServer = res?.data?.data;
-    console.log(todosFromServer);
+    // console.log(todosFromServer);
     setTodos(todosFromServer);
   };
   useEffect(() => {
@@ -33,13 +34,15 @@ const TodoList = () => {
       } catch (e) {
         console.error(e);
       }
-    } else alert("Please enter the value");
+    } else toast.error("Please enter the value");
   };
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`${BASE_URL}/edit-todo/${id}`);
+      const res = await axios.delete(`${BASE_URL}/delete-todo/${id}`);
+      toast.success(res.data?.message);
       getTodo();
+      // alert(res.data.message);
     } catch (e) {
       console.error(e);
     }
@@ -99,6 +102,7 @@ const TodoList = () => {
 
         {/* Footer */}
       </div>
+      <Toaster />
     </div>
   );
 };
