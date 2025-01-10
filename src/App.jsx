@@ -12,11 +12,8 @@ const TodoList = () => {
   const getTodo = async () => {
     const res = await axios(`${BASE_URL}/todos`);
     const todosFromServer = res?.data?.data;
-<<<<<<< HEAD
     // console.log(todosFromServer);
-=======
     //console.log(todosFromServer);
->>>>>>> 9c1eec9212c16156bdab8dbdd358b36543060951
     setTodos(todosFromServer);
   };
   useEffect(() => {
