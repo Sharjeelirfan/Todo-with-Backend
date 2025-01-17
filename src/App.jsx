@@ -4,7 +4,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 const TodoList = () => {
-  const BASE_URL = "http://localhost:3000";
+  const BASE_URL = "https://todo-api-lyart.vercel.app/";
 
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -85,14 +85,14 @@ const TodoList = () => {
         <ul className="space-y-4">
           {todos.map((todo, index) => (
             <li
-              key={todo.id}
+              key={todo._id}
               className="flex items-center justify-between p-4 bg-gray-100 border border-gray-200 rounded-lg shadow-sm"
             >
               <span className="text-gray-800 font-medium">
-                {index + 1}. {todo.todo}
+                {index + 1}. {todo.todoContent}
               </span>
               <button
-                onClick={() => deleteTodo(todo.id)}
+                onClick={() => deleteTodo(todo._id)}
                 className="bg-red-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-red-600 transition"
               >
                 Delete
