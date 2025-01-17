@@ -4,7 +4,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 const TodoList = () => {
-  const BASE_URL = "https://todo-api-lyart.vercel.app/";
+  const BASE_URL = "https://todo-api-lyart.vercel.app";
 
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
